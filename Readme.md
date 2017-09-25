@@ -1,7 +1,4 @@
----
-title: "Readme"
-output: github_document
----
+## Readme
 
 This piece includes 6 plots for the problem set assignments from Exploratory session in Coursera. 
 
@@ -38,5 +35,5 @@ subset the data frame with `subset(df, selected column values, c(a,b,...))`
 ## Data source: 
 https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip
 
-#### ref
+#### refernece work
 https://github.com/wayneeseguin/exdata-project2
