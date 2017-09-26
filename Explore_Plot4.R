@@ -52,7 +52,7 @@ barplot(
 
 dev.off()
 
-
+library(ggplot2)
 #alternative using ggplot
 
 png("plot4b.png",width=480,height=480,units="px",bg="transparent")
