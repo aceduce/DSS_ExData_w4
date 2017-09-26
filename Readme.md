@@ -30,6 +30,23 @@ subset the data frame with `subset(df, selected column values, c(a,b,...))`
 
 ## Plot 3
 
+use the `subset()` function to get only one city (Baltimore City) `NEI_bal<-subset(NEI,fips=="24510",c(Emissions, year, type))`
+
+## Plot 4
+
+use %in% to find the SCC that's in the combustion and coal source. 
+
+`comb_coal<-intersect(comb,coal)`
+
+`comb_coal<- SCC$SCC[comb_coal]`
+
+`com_coal_NEI <- subset(NEI, SCC %in% comb_coal, c(Emissions, year))`
+
+## Plot 5
+
+
+
+## Plot 6
 
 
 ## Data source: 

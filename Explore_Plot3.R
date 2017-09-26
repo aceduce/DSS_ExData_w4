@@ -43,10 +43,3 @@ ggp <- ggplot(NEI_bal,aes(factor(year),Emissions,fill=type)) +
 print(ggp)
 
 dev.off()
-
-
-
-
-
-
-
