@@ -35,19 +35,37 @@ use the `subset()` function to get only one city (Baltimore City) `NEI_bal<-subs
 ## Plot 4
 
 use %in% to find the SCC that's in the combustion and coal source. 
+```
+comb_coal<-intersect(comb,coal)
 
-`comb_coal<-intersect(comb,coal)`
+comb_coal<- SCC$SCC[comb_coal]
 
-`comb_coal<- SCC$SCC[comb_coal]`
-
-`com_coal_NEI <- subset(NEI, SCC %in% comb_coal, c(Emissions, year))`
+com_coal_NEI <- subset(NEI, SCC %in% comb_coal, c(Emissions, year))
+```
 
 ## Plot 5
 
+Find the key word vehicle in the Level.Two parameter.
+```
+vehicle=grep("vehicle",SCC$SCC.Level.Two, ignore.case = T)
 
+vehicle<- SCC$SCC[vehicle]
+
+EM <- subset(NEI, SCC %in% vehicle, c(fips, Emissions, year))
+EM <- subset(EM, fips=="24510")
+```
 
 ## Plot 6
 
+Use following functions to compare LA and Balitmore:
+``` 
+  ggp <- ggplot(EM, aes(x=factor(year), y=Emissions, fill=city)) +
+  geom_bar(aes(fill=year),stat="identity") +
+  facet_grid(scales="free", space="free", .~city) +
+  guides(fill=FALSE) + theme_bw() +
+  labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
+  labs(title="PM 2.5 Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008")
+```
 
 ## Data source: 
 https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip
